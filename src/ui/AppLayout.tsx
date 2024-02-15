@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Main from "./Main";
 import Sidebar from "./Sidebar";
-import Home from "../pages/Home";
+import { Outlet } from "react-router-dom";
 
 function AppLayout() {
   return (
@@ -12,7 +12,7 @@ function AppLayout() {
       <div className="flex">
         <Sidebar>LINK</Sidebar>
         <Main>
-          <Home />
+          <Outlet />
         </Main>
       </div>
     </>
