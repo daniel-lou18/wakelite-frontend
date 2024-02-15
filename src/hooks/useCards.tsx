@@ -24,7 +24,7 @@ function useCards() {
     };
 
     loadCards();
-  }, [setCardsList]);
+  }, [setCardsList, setIsLoading, setError]);
 
   return { cardsList, isLoading, error };
 }
