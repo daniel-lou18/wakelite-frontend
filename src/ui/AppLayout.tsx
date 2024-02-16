@@ -1,21 +1,26 @@
 import Header from "./Header";
 import Main from "./Main";
-import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
+
+const collections = [
+  { name: "Veille technologique", id: "68588465qsdfqsd" },
+  { name: "Éducation enfants", id: "qsd6f54qsdf" },
+];
 
 function AppLayout() {
   return (
-    <>
-      <Header>
-        <h1>TITLE</h1>
-      </Header>
-      <div className="flex">
-        <Sidebar>LINK</Sidebar>
+    <div className="flex">
+      <Sidebar collections={collections} />
+      <div className="flex-1">
+        <Header>
+          <h1>TITLE</h1>
+        </Header>
         <Main>
           <Outlet />
         </Main>
       </div>
-    </>
+    </div>
   );
 }
 

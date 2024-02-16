@@ -17,8 +17,8 @@ export type LinkData = {
 
 function Home() {
   const [linkUrl, setLinkUrl] = useState<string>("");
-  const { cardsList, isLoading, error } = useCards();
-  const { handleSubmit, isLoading: isCreating } = useCreateCard();
+  const { cardsList, isLoading, error, loadCards } = useCards();
+  const { handleSubmit, isLoading: isCreating } = useCreateCard(loadCards);
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     setLinkUrl(e.target.value);

@@ -1,8 +1,8 @@
 import { FormEvent, useState } from "react";
-import { createCard } from "../utils/apiCards";
+import { createCard } from "../services/apiCards";
 import toast from "react-hot-toast";
 
-function useCreateCard() {
+function useCreateCard(reloadFn: () => Promise<void>) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
@@ -13,7 +13,7 @@ function useCreateCard() {
       setError("");
       await createCard(linkUrl);
       toast.success("Card successfully created");
-      // await getCards();
+      await reloadFn();
     } catch (err) {
       console.error((err as Error).message);
       toast.error((err as Error).message);
