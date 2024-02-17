@@ -1,7 +1,8 @@
 const BASE_URL = "http://localhost:3000";
 
-export const getCards = async () => {
-  const res = await fetch(`${BASE_URL}/api/cards`);
+export const getCards = async (collectionId: string) => {
+  if (!collectionId) throw new Error("Collection id is missing!");
+  const res = await fetch(`${BASE_URL}/api/collections/${collectionId}/cards`);
   if (!res.ok) throw new Error("Could not get cards");
   const { payload } = await res.json();
   console.log(payload);
@@ -9,8 +10,9 @@ export const getCards = async () => {
   return payload;
 };
 
-export const createCard = async (linkUrl: string) => {
-  const res = await fetch(`${BASE_URL}/api/cards`, {
+export const createCard = async (collectionId: string, linkUrl: string) => {
+  if (!collectionId) throw new Error("Collection id is missing!");
+  const res = await fetch(`${BASE_URL}/api/collections/${collectionId}/cards`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

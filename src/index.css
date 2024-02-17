@@ -6,15 +6,20 @@
 
 body {
   font-family: "Roboto", Helvetica, sans-serif;
-  min-height: 100vh;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
 }
 
 li {
   list-style: none;
 }
 
-input:focus {
-  outline: none;
+input:focus,
+input:active {
+  outline: 2px solid rgb(79, 70, 229);
 }
 
 aside,

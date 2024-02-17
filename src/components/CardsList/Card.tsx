@@ -1,5 +1,5 @@
-import { type LinkData } from "../../pages/Home";
 import fallbackImg from "../../assets/img/img_placeholder.svg";
+import { LinkData } from "../../hooks/useCards";
 
 type CardProps = { data: LinkData };
 

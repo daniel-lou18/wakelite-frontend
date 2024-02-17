@@ -1,8 +1,16 @@
 import { useCallback, useEffect, useState } from "react";
-import { LinkData } from "../pages/Home";
 import { getCards } from "../services/apiCards";
 
-function useCards() {
+export type LinkData = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  linkUrl: string;
+  createdAt: Date;
+  _id: string;
+};
+
+function useCards(collectionId: string) {
   const [cardsList, setCardsList] = useState<LinkData[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -11,7 +19,7 @@ function useCards() {
     try {
       setIsLoading(true);
       setError("");
-      const payload = await getCards();
+      const payload = await getCards(collectionId);
       // create utils function to convert createdAt property to new Date() for each card
       setCardsList(payload);
     } catch (err) {
@@ -22,7 +30,7 @@ function useCards() {
     }
   };
 
-  const memoizedLoadCards = useCallback(loadCards, []);
+  const memoizedLoadCards = useCallback(loadCards, [collectionId]);
 
   useEffect(() => {
     memoizedLoadCards();

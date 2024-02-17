@@ -1,4 +1,4 @@
-import { type LinkData } from "../../pages/Home";
+import { LinkData } from "../../hooks/useCards";
 import Card from "./Card";
 
 function CardsList({ cards }: { cards: LinkData[] }) {

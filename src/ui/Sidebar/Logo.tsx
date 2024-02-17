@@ -4,24 +4,24 @@ function Logo() {
       <text
         x="50%"
         y="50%"
-        text-anchor="middle"
-        alignment-baseline="middle"
-        font-size="24"
-        font-family="Arial"
+        textAnchor="middle"
+        alignmentBaseline="middle"
+        fontSize="24"
+        fontFamily="Arial"
         fill="white"
       >
         W
       </text>
-      <text x="10" y="40" font-size="36" font-family="Arial" fill="white">
+      <text x="10" y="40" fontSize="36" fontFamily="Arial" fill="white">
         ✦
       </text>
-      <text x="60" y="40" font-size="36" font-family="Arial" fill="white">
+      <text x="60" y="40" fontSize="36" fontFamily="Arial" fill="white">
         ✦
       </text>
-      <text x="10" y="80" font-size="36" font-family="Arial" fill="white">
+      <text x="10" y="80" fontSize="36" fontFamily="Arial" fill="white">
         ✦
       </text>
-      <text x="60" y="80" font-size="36" font-family="Arial" fill="white">
+      <text x="60" y="80" fontSize="36" fontFamily="Arial" fill="white">
         ✦
       </text>
     </svg>
