@@ -12,7 +12,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<AppLayout />}>
       <Route path="/" element={<Collections />} />
-      <Route path="home" element={<Collections />} />
+      <Route path="dashboard" element={<Collections />} />
       <Route path="collections/:collectionId/cards" element={<Cards />} />
     </Route>,
   ),

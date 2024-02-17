@@ -19,7 +19,7 @@ function SidebarIcon({ type = "collection" }: { type?: string }) {
           ></path>
         </svg>
       );
-    case "home":
+    case "dashboard":
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"

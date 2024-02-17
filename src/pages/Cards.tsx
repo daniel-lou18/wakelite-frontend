@@ -3,7 +3,7 @@ import Form from "../components/Form/Form";
 import CardsList from "../components/CardsList/CardsList";
 import { useCards } from "../hooks/useCards";
 import Spinner from "../ui/Spinner";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useCreateCard } from "../hooks/useCreateCard";
 import { useParams } from "react-router-dom";
 
@@ -35,7 +35,6 @@ function Cards() {
       />
       {(isLoading || isCreating) && <Spinner />}
       {!(isLoading || isCreating) && !error && <CardsList cards={cardsList} />}
-      <Toaster />
     </>
   );
 }

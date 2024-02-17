@@ -9,12 +9,12 @@ export type SidebarProps = {
 
 function Sidebar({ collections }: SidebarProps) {
   return (
-    <aside className="h-full w-64 overflow-hidden px-4 py-4 text-blue-100">
+    <aside className="h-full w-64 overflow-hidden px-4 py-4 text-blue-100 dark:bg-slate-900">
       <Logo />
       <ul>
         <li className="mt-2">
           <ul className="flex flex-col gap-3">
-            <SidebarLink name="home" />
+            <SidebarLink name="dashboard" />
             <SidebarLink name="bookmarks" />
           </ul>
         </li>
